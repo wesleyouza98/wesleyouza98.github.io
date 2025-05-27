@@ -1,11 +1,10 @@
 {
   "name": "Energia Quântica",
-  "short_name": "E. Quântica",
+  "short_name": "Energia",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#0b0b0b",
-  "orientation": "portrait",
+  "background_color": "#000000",
+  "theme_color": "#6a0dad",
   "icons": [
     {
       "src": "icon-192.png",
