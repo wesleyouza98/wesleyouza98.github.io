@@ -1,18 +1,7 @@
-const cacheName = 'energia-quantica-v1';
-const filesToCache = [
-  '/',
-  '/index.html',
-  '/manifest.json'
-];
-
-self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open(cacheName).then(cache => cache.addAll(filesToCache))
-  );
+self.addEventListener("install", function (e) {
+  console.log("Service Worker: Instalado");
 });
 
-self.addEventListener('fetch', e => {
-  e.respondWith(
-    caches.match(e.request).then(response => response || fetch(e.request))
-  );
+self.addEventListener("fetch", function (event) {
+  event.respondWith(fetch(event.request));
 });
