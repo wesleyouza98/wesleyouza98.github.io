@@ -5,10 +5,10 @@ const urlsToCache = [
   '/icon-192.png',
   '/icon-512.png',
   '/manifest.json',
-  // Adicione aqui outros arquivos importantes
+  // Adicione outros arquivos essenciais aqui
 ];
 
-// Instala o service worker e faz o cache dos arquivos
+// Instala o Service Worker e faz o cache dos arquivos
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
@@ -17,7 +17,7 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Ativa o novo service worker e limpa caches antigos
+// Ativa o novo Service Worker e remove caches antigos
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -36,9 +36,12 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    }).catch(() => {
-      return caches.match('/index.html');
+      return (
+        response ||
+        fetch(event.request).catch(() => {
+          return caches.match('/index.html');
+        })
+      );
     })
   );
 });
