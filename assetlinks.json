@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "www.energiaquantica.app.br",
+        "sha256_cert_fingerprints": ["58:39:11:B1:1E:D7:27:59:34:0D:75:DF:A7:1F:BC:17:08:33:CF:33:70:D8:BE:1D:1B:1B:CD:A1:FD:09:74:BC"]
+      }
+    }]
